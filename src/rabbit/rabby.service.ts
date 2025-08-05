@@ -18,11 +18,6 @@ export class RabbyService implements OnModuleInit {
 		});
 	}
 
-	//   private async setupChannel(channel: amqp.Channel) {
-	//     await channel.assertQueue('vi_queue', { durable: true });
-	//     await channel.assertQueue('work.queue', { durable: true });
-	//   }
-
 	// очередь существует или создаём
 	private async setupChannel(channel: amqp.Channel) {
 		const q1 = this.configService.get<string>('RABBIT_QUEUE1') || '';

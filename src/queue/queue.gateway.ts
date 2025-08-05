@@ -11,7 +11,7 @@ export class QueueGateway implements OnGatewayInit {
   constructor(private readonly rabbyService: RabbyService) {}
 
   afterInit() {
-    interval(5000).subscribe(async () => {
+    interval(3000).subscribe(async () => {
       const stats = await this.rabbyService.getAllQueuesStats();
       this.server.emit('queueStats', stats);
     });
